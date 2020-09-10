@@ -21,14 +21,14 @@ struct WeatherManager: WeatherManagerDelegate{
         print(weather.temperatureString)
     }
     
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=/enter your api key/&units=metric"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=414073c3edd70438b3f5fa45a528efed&units=metric"
     
     var delegate: WeatherManagerDelegate?
     
     func fetchWeather(cityName: String){
         if let cityName = cityName.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
         let urlString = "\(weatherURL)&q=\(cityName)"
-        performRequest(with: urlString) //adding percentage encoding is for cities having spacs in name
+        performRequest(with: urlString) //adding percentage encoding is for cities having spaces in name
         }
     }
     
